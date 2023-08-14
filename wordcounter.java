@@ -1,8 +1,8 @@
+
 import java.util.*;
 import javax.swing.*;
 import java.awt.Color;
 import java.io.*;
-import java.io.FileNotFoundException;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,7 +12,7 @@ class wordcounter{
         frame.setSize(600, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
-       Color customColor=new Color(0,255,255);
+        Color customColor=new Color(0,255,255);
         frame.setBackground(customColor);
 
         JLabel label=new JLabel(" Word Counter", 0);
@@ -25,8 +25,12 @@ class wordcounter{
         JButton count2=new JButton("Count words in given file");
         count2.setBounds(185, 460, 200, 30);
 
-        JTextArea text=new JTextArea(null, null, 10, 50);
-        text.setBounds(90, 100, 400, 150); 
+       
+        JTextArea text=new JTextArea(null, null, 10, 50); 
+        JScrollPane scrollPane=new JScrollPane(text);  
+        scrollPane.setBounds(90,100,400,150);
+                     
+
         JTextArea counter=new JTextArea(null, null, 1, 5);
         counter.setBounds(245, 350, 80, 30);
         
@@ -67,7 +71,7 @@ class wordcounter{
         });
         frame.add(counter);
         frame.add(count2);
-        frame.add(text);
+        frame.add(scrollPane);
         frame.add(label);
         frame.add(count);
         frame.setLayout(null);
